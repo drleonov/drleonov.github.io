@@ -1,23 +1,135 @@
+html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dr. Denis Leonov</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Denis Leonov — Ultrasound Research</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            color: #222;
+            background: #fafafa;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.2rem;
+            color: #0a2f6c;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #2c5282;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #2c5282;
+            padding-left: 1rem;
+        }
+        .affiliations {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 0;
+        }
+        .projects {
+            margin: 2rem 0;
+        }
+        .project {
+            margin-bottom: 1.5rem;
+        }
+        .project-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #0a2f6c;
+        }
+        .project-desc {
+            margin-left: 1rem;
+            color: #2d3748;
+        }
+        .links {
+            margin: 2rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #e2e8f0;
+        }
+        .links a {
+            margin-right: 1.5rem;
+            text-decoration: none;
+            color: #2c5282;
+            font-weight: 500;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+        }
+        a {
+            color: #2c5282;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
 </head>
 <body>
     <h1>Dr. Denis Leonov</h1>
-    <p>Principal Investigator, Moscow Ultrasound Lab</p>
-    <p>Moscow Center for Diagnostics and Telemedicine</p>
-    <hr>
-    <h2>Projects</h2>
-    <ul>
-        <li><strong>RUFUS</strong> — Open‑source C++ framework for ultrasound signal processing on real RF data</li>
-        <li><strong>Anthropomorphic phantoms</strong> — Tissue‑mimicking models for ultrasound training and validation</li>
-        <li><strong>Augmented Reality</strong> — AR navigation for ultrasound‑guided interventions</li>
-    </ul>
-    <h2>Links</h2>
-    <ul>
-        <li><a href="https://github.com/drleonov">GitHub</a></li>
-        <li><a href="https://github.com/moscow-ultrasound-lab">Moscow Ultrasound Lab</a></li>
-    </ul>
+    <div class="subtitle">
+        Ultrasound signal processing · Phantom design · AR navigation
+    </div>
+
+    <div class="affiliations">
+        Moscow Center for Diagnostics and Telemedicine • Moscow Power Engineering Institute • Russian Academy of Sciences
+    </div>
+
+    <p>
+        I am a scientist with a passion for <strong>signal processing</strong> and 
+        <strong>phantom design</strong> for ultrasound imaging in medicine.
+    </p>
+
+    <div class="projects">
+        <div class="project">
+            <div class="project-title">🔬 RUFUS</div>
+            <div class="project-desc">
+                Open‑source C++ framework for ultrasound signal processing on real RF data.<br>
+                <a href="https://github.com/moscow-ultrasound-lab/rufus">github.com/moscow-ultrasound-lab/rufus</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">🧪 Anthropomorphic Phantoms</div>
+            <div class="project-desc">
+                Tissue‑mimicking models (neck, head, breast) for ultrasound training and algorithm validation.
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">🥽 Augmented Reality</div>
+            <div class="project-desc">
+                AR navigation for ultrasound‑guided interventions and medical education.
+            </div>
+        </div>
+    </div>
+
+    <div class="links">
+        <a href="https://github.com/drleonov">GitHub</a>
+        <a href="https://github.com/moscow-ultrasound-lab">Moscow Ultrasound Lab</a>
+        <a href="#">Google Scholar</a>
+        <a href="#">ORCID</a>
+    </div>
+
+    <div class="footer">
+        Moscow Ultrasound Lab · <a href="https://github.com/moscow-ultrasound-lab">github.com/moscow-ultrasound-lab</a>
+    </div>
 </body>
 </html>
