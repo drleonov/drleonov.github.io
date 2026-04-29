@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Denis Leonov — Ultrasound Research</title>
+    <title>Moscow Ultrasound Lab — Medical Imaging Research</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 20px;
             color: #222;
             background: #fafafa;
         }
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.2rem;
+        h1, h2 {
             color: #0a2f6c;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
         }
         .subtitle {
             font-size: 1.1rem;
             color: #2c5282;
-            margin-top: 0;
             margin-bottom: 1.5rem;
             border-left: 3px solid #2c5282;
             padding-left: 1rem;
@@ -34,6 +33,49 @@
             border-top: 1px solid #e2e8f0;
             border-bottom: 1px solid #e2e8f0;
             padding: 0.75rem 0;
+        }
+        .member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .member-photo {
+            width: 80px;
+            height: 80px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #4a5568;
+            margin-right: 1.5rem;
+            overflow: hidden;
+        }
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .member-info {
+            flex: 1;
+        }
+        .member-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #0a2f6c;
+        }
+        .member-role {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+        .member-desc {
+            color: #2d3748;
+            font-size: 0.9rem;
         }
         .projects {
             margin: 2rem 0;
@@ -74,54 +116,70 @@
         }
         a {
             color: #2c5282;
+            text-decoration: none;
         }
-        hr {
-            border: none;
-            border-top: 1px solid #e2e8f0;
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .member {
+                flex-direction: column;
+                text-align: center;
+            }
+            .member-photo {
+                margin-right: 0;
+                margin-bottom: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
-    <img src="photo.jpg" alt="Dr. Denis Leonov" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
-    <h1>Dr. Denis Leonov</h1>
+    <h1>Moscow Ultrasound Lab</h1>
     <div class="subtitle">
-        Ultrasound signal processing · Phantom design · AR navigation
+        Medical Ultrasound Imaging Research Group @ Moscow Center for Diagnostics and Telemedicine
     </div>
 
     <div class="affiliations">
-    <a href="https://telemedai.ru/en/">Moscow Center for Diagnostics and Telemedicine</a> • 
-    <a href="https://mpei.ru/lang/en/Pages/default.aspx">Moscow Power Engineering Institute</a> • 
-    <a href="http://www.frccsc.ru">Russian Academy of Sciences</a>
+        <a href="https://telemedai.ru/en/">Moscow Center for Diagnostics and Telemedicine</a> • 
+        <a href="https://mpei.ru/lang/en/Pages/default.aspx">Moscow Power Engineering Institute</a> • 
+        <a href="http://www.frccsc.ru">Russian Academy of Sciences</a>
     </div>
 
     <p>
-        I lead the <strong>Moscow Ultrasound Lab</strong>, where we develop end‑to‑end solutions 
-    for ultrasound imaging — from open‑source C++ frameworks (<strong>RUFUS</strong>) 
-    and tissue‑mimicking phantoms to <strong>AR navigation</strong>. 
-    Our goal is to make ultrasound research more reproducible, 
-    training more effective, and interventions more precise.
+        We develop end‑to‑end solutions for ultrasound imaging — from open‑source C++ frameworks (<strong>RUFUS</strong>) 
+        and tissue‑mimicking <strong>phantoms</strong> to <strong>augmented reality</strong> navigation for ultrasound‑guided interventions.
+        Our goal is to make ultrasound research more reproducible, training more effective, and interventions more precise.
     </p>
 
+    <!-- Principal Investigator -->
+    <h2>Principal Investigator</h2>
+    <div class="member">
+        <div class="member-photo"><img src="photo.jpg" alt="Dr. Denis Leonov"></div>
+        <div class="member-info">
+            <div class="member-name">Dr. Denis Leonov</div>
+            <div class="member-role">Leading Scientist and Scientific Supervisor of Moscow Ultrasound Lab</div>
+            <div class="member-desc">Ultrasound signal processing, phantom design, AR navigation</div>
+        </div>
+    </div>
+
+    <!-- Research Projects -->
+    <h2>Research Projects</h2>
+    
     <div class="projects">
         <div class="project">
-            <div class="project-title">            
-            <a href="https://github.com/moscow-ultrasound-lab/rufus">🔬 RUFUS</a></div>
+            <div class="project-title"><a href="https://github.com/moscow-ultrasound-lab/rufus">🔬 RUFUS</a></div>
             <div class="project-desc">
-                Open‑source C++ framework for ultrasound signal processing on real RF data.<br>
+                Open‑source C++ framework for ultrasound signal processing on real RF data.
             </div>
         </div>
 
-<div class="project">
-    <div class="project-title">
-        <a href="https://telemedai.ru/en/nauka/fantomy-i-medicinskie-simulyatory">🧪 Anthropomorphic Phantoms</a></div>
-    <div class="project-desc">
-        Tissue‑mimicking models for ultrasound training and algorithm validation.
-        <ul style="margin-top: 0.5rem; margin-bottom: 0;">
-        </ul>
-    </div>
-</div>
+        <div class="project">
+            <div class="project-title"><a href="https://telemedai.ru/en/nauka/fantomy-i-medicinskie-simulyatory">🧪 Anthropomorphic Phantoms</a></div>
+            <div class="project-desc">
+                Tissue‑mimicking models for ultrasound training and algorithm validation.
+            </div>
+        </div>
 
-        
         <div class="project">
             <div class="project-title">🥽 Augmented Reality</div>
             <div class="project-desc">
@@ -130,36 +188,149 @@
         </div>
     </div>
 
-<div class="projects">
-    <div class="project-title">📄 Selected Publications</div>
-    <div class="project-desc">
-        <ul style="margin-top: 0.5rem;">
-            <li><strong>Leonov D.</strong>, Kulberg N., Yakovleva T. <strong>Aberration correction by polynomial approximation for synthetic aperture ultrasound imaging</strong>. <em>Medical Physics</em>, 2024. <a href="https://doi.org/10.1002/mp.17078">DOI</a></li>
-            <li><strong>Leonov D.</strong>, Kodenko M, Leichenco D, Nasibullina A, Kulberg N. <strong>Design and validation of a phantom for transcranial ultrasonography</strong>. <em>Int J CARS</em>, 2022. <a href="https://doi.org/10.1007/s11548-022-02614-2">DOI</a></li>
-            <li><strong>Leonov D.</strong>, Venidiktova D., Costa-Júnior J.F.S., Nasibullina A., Tarasova O., Pashinceva K., Vatsheva N., Bulgakova J., Kulberg N., Borsukov A., Saika M.J. <strong>Development of an anatomical breast phantom from polyvinyl chloride plastisol with lesions of various shape, elasticity and echogenicity for teaching ultrasound examination</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-023-02911-4">DOI</a></li>
-            <li><strong>Leonov D.</strong>, Nasibullina A, Grebennikova V, Vlasova O, Bulgakova Yu, Belyakova E, Shestakova D, Costa-Junior JFS, Omelianskaya O., Vasiliev Yu. <strong>Design and evaluation of an anthropomorphic neck phantom for improved ultrasound diagnostics of thyroid gland tumors</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-024-03130-1">DOI</a></li>
-        </ul>
-    </div>
-</div>
+    <!-- Team -->
+    <h2>Research Scientists</h2>
     
-    <div class="links">
-<div class="links">
-    <a href="https://github.com/drleonov">GitHub</a>
-    <a href="https://scholar.google.ru/citations?user=uqSFx-cAAAAJ">Google Scholar</a>
-    <a href="https://www.researchgate.net/profile/Denis-Leonov-2">ResearchGate</a>
-    <a href="https://orcid.org/0000-0003-0916-6552">ORCID</a>
-    <a href="20260428_cv.pdf">CV</a>
-</div>
+    <div class="member">
+        <div class="member-photo"><img src="images/BulgakovaYV.jpg" alt="Yulia Bulgakova"></div>
+        <div class="member-info">
+            <div class="member-name">Yulia Bulgakova</div>
+            <div class="member-role">Junior Research Scientist / PhD Student</div>
+            <div class="member-desc">Ultrasound phantoms, tissue-mimicking materials, validation studies</div>
+        </div>
     </div>
 
-<div style="text-align: center; margin: 2rem 0;">
-        <img src="images/lab-group.jpg" alt="Moscow Ultrasound Lab team" 
+    <div class="member">
+        <div class="member-photo"><img src="images/VlasovaOV.jpg" alt="Olga Vlasova"></div>
+        <div class="member-info">
+            <div class="member-name">Olga Vlasova</div>
+            <div class="member-role">Junior Research Scientist</div>
+            <div class="member-desc">Ultrasound phantoms, training models, experimental studies</div>
+        </div>
+    </div>
+
+    <div class="member">
+        <div class="member-photo"><img src="images/GrebennikovaVV.jpg" alt="Veronika Grebennikova"></div>
+        <div class="member-info">
+            <div class="member-name">Veronika Grebennikova</div>
+            <div class="member-role">Junior Research Scientist</div>
+            <div class="member-desc">3D-printed phantoms, ultrasound imaging, validation</div>
+        </div>
+    </div>
+
+    <div class="member">
+        <div class="member-photo"><span>📷</span></div>
+        <div class="member-info">
+            <div class="member-name">Marina Dubova</div>
+            <div class="member-role">Junior Research Scientist (currently on parental leave)</div>
+            <div class="member-desc">Ultrasound phantoms, tissue-mimicking materials, validation studies</div>
+        </div>
+    </div>
+
+    <h2>Technical Staff</h2>
+    
+    <div class="member">
+        <div class="member-photo"><img src="images/BeliakovaED.jpg" alt="Ekaterina Belyakova"></div>
+        <div class="member-info">
+            <div class="member-name">Ekaterina Belyakova</div>
+            <div class="member-role">Technician</div>
+            <div class="member-desc">Phantom fabrication, 3D printing, quality control</div>
+        </div>
+    </div>
+
+    <div class="member">
+        <div class="member-photo"><span>📷</span></div>
+        <div class="member-info">
+            <div class="member-name">Maria Tyrtyshnikova</div>
+            <div class="member-role">Technician</div>
+            <div class="member-desc">Phantom assembly, material preparation, documentation</div>
+        </div>
+    </div>
+
+    <div class="member">
+        <div class="member-photo"><span>📷</span></div>
+        <div class="member-info">
+            <div class="member-name">Robert Zakharjan</div>
+            <div class="member-role">Technician</div>
+            <div class="member-desc">3D printing, mold fabrication, equipment maintenance</div>
+        </div>
+    </div>
+
+    <div class="member">
+        <div class="member-photo"><span>📷</span></div>
+        <div class="member-info">
+            <div class="member-name">Arina Terzi</div>
+            <div class="member-role">Technician</div>
+            <div class="member-desc">Augmented reality</div>
+        </div>
+    </div>
+
+    <div class="member">
+        <div class="member-photo"><img src="images/SerovAD.jpg" alt="Alexander Serov"></div>
+        <div class="member-info">
+            <div class="member-name">Alexander Serov</div>
+            <div class="member-role">Technician</div>
+            <div class="member-desc">Augmented reality</div>
+        </div>
+    </div>
+
+    <h2>Analyst</h2>
+    
+    <div class="member">
+        <div class="member-photo"><span>📷</span></div>
+        <div class="member-info">
+            <div class="member-name">Anna Akopova</div>
+            <div class="member-role">Analyst</div>
+            <div class="member-desc">Data analysis, research coordination, reporting</div>
+        </div>
+    </div>
+
+    <h2>Administration</h2>
+    
+    <div class="member">
+        <div class="member-photo"><img src="images/VoroninaAA.jpg" alt="Anastasia Voronina"></div>
+        <div class="member-info">
+            <div class="member-name">Anastasia Voronina</div>
+            <div class="member-role">Administrator (currently on parental leave)</div>
+            <div class="member-desc">Laboratory management, project coordination, documentation</div>
+        </div>
+    </div>
+
+    <!-- Publications -->
+    <h2>Selected Publications</h2>
+    <ul>
+        <li><strong>Leonov D.</strong>, Kulberg N., Yakovleva T. <strong>Aberration correction by polynomial approximation for synthetic aperture ultrasound imaging</strong>. <em>Medical Physics</em>, 2024. <a href="https://doi.org/10.1002/mp.17078">DOI</a></li>
+        <li><strong>Leonov D.</strong>, Kodenko M, Leichenco D, Nasibullina A, Kulberg N. <strong>Design and validation of a phantom for transcranial ultrasonography</strong>. <em>Int J CARS</em>, 2022. <a href="https://doi.org/10.1007/s11548-022-02614-2">DOI</a></li>
+        <li><strong>Leonov D.</strong>, Venidiktova D., Costa-Júnior J.F.S., Nasibullina A., Tarasova O., Pashinceva K., Vatsheva N., Bulgakova J., Kulberg N., Borsukov A., Saika M.J. <strong>Development of an anatomical breast phantom...</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-023-02911-4">DOI</a></li>
+        <li><strong>Leonov D.</strong>, Nasibullina A, Grebennikova V, Vlasova O, Bulgakova Yu, Belyakova E, Shestakova D, Costa-Junior JFS, Omelianskaya O., Vasiliev Yu. <strong>Design and evaluation of an anthropomorphic neck phantom...</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-024-03130-1">DOI</a></li>
+    </ul>
+
+    <!-- Join Us -->
+    <h2>Join Us</h2>
+    <p>
+        We are always looking for motivated students, postdocs, and engineers. 
+        If you are interested in ultrasound imaging, signal processing, medical phantoms, 
+        or augmented reality — please contact us at <strong>leonovd.v@ya.ru</strong>.
+    </p>
+
+    <!-- Links -->
+    <div class="links">
+        <a href="https://github.com/drleonov">GitHub</a>
+        <a href="https://scholar.google.ru/citations?user=uqSFx-cAAAAJ">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Denis-Leonov-2">ResearchGate</a>
+        <a href="https://orcid.org/0000-0003-0916-6552">ORCID</a>
+        <a href="20260428_cv.pdf">CV</a>
+    </div>
+
+    <!-- Lab Photo -->
+    <div style="text-align: center; margin: 2rem 0;">
+        <img src="images/lab2.jpg" alt="Moscow Ultrasound Lab team" 
              style="width: 100%; max-width: 600px; border-radius: 12px;">
         <p style="color: #4a5568; font-size: 0.85rem; margin-top: 0.5rem;">
-            <a href="lab.html">Moscow Ultrasound Lab</a>
+            Moscow Ultrasound Lab team
         </p>
     </div>
-    
+
     <div class="footer">
         Moscow Ultrasound Lab · <a href="https://github.com/moscow-ultrasound-lab">github.com/moscow-ultrasound-lab</a>
     </div>
