@@ -361,11 +361,11 @@
 
 <!-- ==================== OPEN DATASETS ==================== -->
 <div id="datasets">
-    <h2>📂 Open Datasets</h2>
-    <p>We believe in reproducible research. Our datasets are freely available for academic use under <strong>CC BY-NC-SA</strong> license.</p>
+    <h2>📂 Open Datasets & 3D‑Printable Phantoms</h2>
+    <p>We believe in reproducible research. Our datasets and 3D models are freely available for academic use under <strong>CC BY-NC-SA</strong> license.</p>
     
     <div class="datasets-grid">
-        <!-- Dataset 1: Doppler Twinkling Artifact (главный) -->
+        <!-- Dataset 1: Doppler Twinkling Artifact -->
         <div class="dataset-card featured">
             <div class="dataset-title">✨ Doppler Twinkling Artifact Database</div>
             <div class="dataset-desc">Raw RF signals (10.5 GB) from kidney stones, microcalcifications, and phantoms. Includes viewer software.</div>
@@ -375,57 +375,59 @@
             </div>
             <div class="dataset-meta">
                 <strong>📄 Paper:</strong> Leonov et al., <em>J Digital Diagnostics</em>, 2021<br>
-                <strong>🔗 Data:</strong> <a href="https://mosmed.ai/en/datasets/datasets/ultrasounddopplertwinklingartifact/" target="_blank">mosmed.ai →</a><br>
+                <strong>🔗 Data:</strong> <a href="https://mosmed.ai/datasets/ultrasound_doppler_twinkling_artifact" target="_blank">mosmed.ai →</a><br>
                 <strong>💻 Code:</strong> <a href="https://github.com/Center-of-Diagnostics-and-Telemedicine/TwinklingDatasetDisplay.git" target="_blank">GitHub: TwinklingDatasetDisplay</a>
             </div>
         </div>
-      
-        <!-- Dataset 2: Transcranial Ultrasound Phantom -->
+        
+        <!-- Dataset 2: Transcranial Phantom STL -->
         <div class="dataset-card">
             <div class="dataset-title">🧠 Transcranial Ultrasound Phantom</div>
             <div class="dataset-desc">STL files for 3D printing a custom skull-mimicking phantom for transcranial imaging.</div>
             <div class="dataset-meta">
                 <strong>📄 Paper:</strong> Leonov et al., Int J CARS 2022<br>
-                <strong>🔗 Data:</strong> <a href="https://www.researchgate.net/publication/355882487_Ultrasound_head_phantom" target="_blank">researchgate →</a><br>
-            </div>
-        </div>
-
-         <!-- Dataset 3: Anthropomorphic Breast Phantom -->
-        <div class="dataset-card">
-            <div class="dataset-title">🎗️ Anthropomorphic Breast Phantom</div>
-            <div class="dataset-desc">STL files for 3D printing a breast phantom for ultrasound imaging.</div>
-            <div class="dataset-meta">
-                <strong>📄 Paper:</strong> Leonov et al., Int J CARS 2024<br>
-                <strong>🔗 Data:</strong> <a href="https://www.researchgate.net/publication/362606799_STL_files_for_3D_printing_breast_phantom_molds" target="_blank">researchgate →</a><br>
+                <strong>🔗 STL files:</strong> <a href="https://www.researchgate.net/figure/STL-files-for-3D-printing-a-skull-mimicking-phantom_fig2_366275258" target="_blank">Download from ResearchGate →</a>
             </div>
         </div>
         
-        <!-- Dataset 4: Anthropomorphic Neck Phantom -->
+        <!-- Dataset 3: Breast Phantom STL -->
         <div class="dataset-card">
-            <div class="dataset-title">👻 Anthropomorphic Neck Phantom</div>
-            <div class="dataset-desc">STL files for 3D printing a neck phantom for ultrasound imaging.</div>
+            <div class="dataset-title">🎗️ Anthropomorphic Breast Phantom</div>
+            <div class="dataset-desc">STL files for 3D printing a breast phantom with microcalcification-mimicking inclusions.</div>
             <div class="dataset-meta">
                 <strong>📄 Paper:</strong> Leonov et al., Int J CARS 2024<br>
-                <strong>🔗 Data:</strong> <a href="https://www.researchgate.net/publication/378875793_STL_files_for_3D_printing_neck_phantom_molds" target="_blank">researchgate →</a><br>
+                <strong>🔗 STL files:</strong> <a href="https://www.researchgate.net/figure/STL-files-for-3D-printing-a-breast-phantom_fig2_376576164" target="_blank">Download from ResearchGate →</a>
             </div>
         </div>
-
-
-
-        <!-- Dataset 5: Synthetic Aperture RF Data for Transcranial Aberration Correction -->
+        
+        <!-- Dataset 4: Neck Phantom STL -->
         <div class="dataset-card">
-            <div class="dataset-title">💀 Transcranial Aberration Correction</div>
-            <div class="dataset-desc">Raw RF signals from a transcranial phantom. Includes software for aberratoin correction.</div>
-            <div class="dataset-meta"></div>
+            <div class="dataset-title">🦴 Anthropomorphic Neck Phantom</div>
+            <div class="dataset-desc">STL files for 3D printing a neck phantom for thyroid and vascular ultrasound training.</div>
             <div class="dataset-meta">
-                <strong>📄 Paper:</strong> Leonov et al., <em>Medical Physics</em>, 2024<br>
-                <strong>🔗 Data:</strong> <a href="https://figshare.com/articles/dataset/Aberration_Correction_Raw_Ultrasound_Data_and_Computer_Program/18495170/1" target="_blank">figshare →</a><br>
+                <strong>📄 Paper:</strong> Leonov et al., Int J CARS 2024<br>
+                <strong>🔗 STL files:</strong> <a href="https://www.researchgate.net/figure/STL-files-for-3D-printing-a-neck-phantom_fig2_384594401" target="_blank">Download from ResearchGate →</a>
             </div>
         </div>
-
+        
+        <!-- Dataset 5: Spongy Phantom (open-source) -->
+        <div class="dataset-card" style="border-left-color: #9b59b6;">
+            <div class="dataset-title">🧽 Spongy Ultrasound Training Phantom</div>
+            <div class="dataset-desc">3D‑printed porous medium (156 µm fibers) with anechoic cysts. Mimics muscle/breast tissue. Withstands 300+ punctures.</div>
+            <div class="dataset-meta">
+                <span class="badge" style="background:#9b59b6; color:white;">Open-source</span>
+                <span class="badge badge-size">3h 23min print</span>
+            </div>
+            <div class="dataset-meta">
+                <strong>📄 Paper:</strong> Grebennikova et al., Phys Eng Sci Med, 2026<br>
+                <strong>🔗 STL + software:</strong> <a href="https://www.researchgate.net/publication/394494300_Data_for_LCD_3D_printing_of_a_spongy_phantom" target="_blank">ResearchGate →</a><br>
+                <strong>💻 Custom C++ code:</strong> <a href="https://www.researchgate.net/publication/362024088_Data_for_ultrasound_spongy_phantom_design" target="_blank">Generate your own →</a>
+            </div>
+        </div>
+    </div>
     
-    <p style="margin-top: 15px; text-align: center; font-size: 0.9rem;">
-        📬 <strong>All datasets are free for non-commercial use.</strong> Questions? Contact us at <strong>leonovd.v@ya.ru</strong>
+    <p style="margin-top: 25px; text-align: center; font-size: 0.9rem;">
+        📬 <strong>All datasets and STL files are free for non-commercial use.</strong> Questions? Contact us at <strong>leonovd.v@ya.ru</strong>
     </p>
 </div>
 
