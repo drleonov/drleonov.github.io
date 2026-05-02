@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moscow Ultrasound Lab — Medical Imaging Research</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            max-width: 1000px;
-            margin: 2rem auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
             color: #222;
             background: #fafafa;
@@ -18,6 +21,10 @@
             color: #0a2f6c;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        h1 {
+            margin-top: 1rem;
         }
         .subtitle {
             font-size: 1.1rem;
@@ -34,25 +41,67 @@
             border-bottom: 1px solid #e2e8f0;
             padding: 0.75rem 0;
         }
-        .member {
+        
+        /* Navigation menu */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            margin-bottom: 30px;
+            border-radius: 0 0 12px 12px;
+        }
+        .nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 1rem;
             flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2c7da0;
+            font-weight: 500;
+            padding: 5px 0;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: #1a5a7a;
+            text-decoration: underline;
+        }
+        
+        /* Member cards */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .member {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .member:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .member-photo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: #e2e8f0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #4a5568;
-            margin-right: 1.5rem;
+            margin: 0 auto 1rem;
             overflow: hidden;
         }
         .member-photo img {
@@ -61,7 +110,7 @@
             object-fit: cover;
         }
         .member-info {
-            flex: 1;
+            text-align: center;
         }
         .member-name {
             font-weight: bold;
@@ -70,42 +119,141 @@
         }
         .member-role {
             color: #4a5568;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 0.25rem;
         }
         .member-desc {
             color: #2d3748;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
-        .projects {
-            margin: 2rem 0;
+        .member-links {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
         }
-        .project {
-            margin-bottom: 1.5rem;
+        .member-links a {
+            color: #2c5282;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
         }
         .project-title {
             font-weight: bold;
             font-size: 1.1rem;
             color: #0a2f6c;
+            margin-bottom: 0.5rem;
         }
         .project-desc {
-            margin-left: 1rem;
             color: #2d3748;
+            font-size: 0.9rem;
         }
-        .links {
+        .project-schema {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            color: #718096;
+        }
+        
+        /* Offer block */
+        .offer-block {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fa 100%);
+            padding: 1.5rem;
+            border-radius: 16px;
             margin: 2rem 0;
-            padding: 1rem 0;
-            border-top: 1px solid #e2e8f0;
+            border-left: 4px solid #2c7da0;
         }
-        .links a {
-            margin-right: 1.5rem;
-            text-decoration: none;
-            color: #2c5282;
+        .offer-block h3 {
+            margin: 0 0 0.75rem 0;
+            color: #0a2f6c;
+        }
+        .offer-block ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+        .offer-block li {
+            margin: 0.5rem 0;
+        }
+        
+        /* Datasets */
+        .datasets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .dataset-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid #2c7da0;
+        }
+        .dataset-card.featured {
+            border-left-color: #d9534f;
+            background: #fffaf5;
+        }
+        .dataset-title {
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0 0 0.5rem 0;
+            color: #0a2f6c;
+        }
+        .dataset-desc {
+            color: #4a5568;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+        .dataset-meta {
+            font-size: 0.8rem;
+            margin: 0.5rem 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.7rem;
             font-weight: 500;
+            margin-right: 6px;
         }
-        .links a:hover {
-            text-decoration: underline;
+        .badge-featured { background: #d9534f; color: white; }
+        .badge-size { background: #2c7da0; color: white; }
+        .badge-soon { background: #ffc107; color: #333; }
+        
+        /* Publications */
+        .publication-group {
+            margin: 1.5rem 0;
         }
+        .pub-category {
+            font-weight: bold;
+            color: #0a2f6c;
+            margin: 1rem 0 0.5rem 0;
+            padding-left: 0.5rem;
+            border-left: 3px solid #2c7da0;
+        }
+        
+        /* News */
+        .news-item {
+            margin: 0.75rem 0;
+        }
+        .news-date {
+            font-size: 0.8rem;
+            color: #718096;
+        }
+        
         .footer {
             margin-top: 2.5rem;
             font-size: 0.8rem;
@@ -121,19 +269,41 @@
         a:hover {
             text-decoration: underline;
         }
+        
         @media (max-width: 600px) {
-            .member {
-                flex-direction: column;
-                text-align: center;
+            body {
+                padding: 0 15px;
             }
-            .member-photo {
-                margin-right: 0;
-                margin-bottom: 0.75rem;
+            .nav-links {
+                gap: 12px;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+            .members-grid, .projects-grid, .datasets-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+
+<!-- ==================== NAVIGATION MENU ==================== -->
+<nav>
+    <div class="nav-links">
+        <a href="#home">🏠 Home</a>
+        <a href="#projects">📁 Projects</a>
+        <a href="#offer">🤝 For Partners</a>
+        <a href="#datasets">📂 Open Data</a>
+        <a href="#team">👥 Team</a>
+        <a href="#publications">📄 Publications</a>
+        <a href="#news">📰 News</a>
+        <a href="#join">✉️ Join Us</a>
+    </div>
+</nav>
+
+<!-- ==================== HOME ==================== -->
+<div id="home">
     <h1>Moscow Ultrasound Lab</h1>
     <div class="subtitle">
         Medical Ultrasound Imaging Research Group @ Moscow Center for Diagnostics and Telemedicine
@@ -150,206 +320,275 @@
         and tissue‑mimicking <strong>phantoms</strong> to <strong>augmented reality</strong> navigation for ultrasound‑guided interventions.
         Our goal is to make ultrasound research more reproducible, training more effective, and interventions more precise.
     </p>
+</div>
 
-    <!-- Research Projects -->
-    <h2>Research Projects</h2>
-    
-    <div class="projects">
-        <div class="project">
+<!-- ==================== RESEARCH PROJECTS ==================== -->
+<div id="projects">
+    <h2>🔬 Research Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
             <div class="project-title"><a href="https://github.com/moscow-ultrasound-lab/rufus">🔬 RUFUS</a></div>
-            <div class="project-desc">
-                Open‑source C++ framework for ultrasound signal processing on real RF data.
-            </div>
+            <div class="project-desc">Open‑source C++ framework for ultrasound signal processing on real RF data.</div>
+            <div class="project-schema">RF → Beamforming → Image → AR</div>
         </div>
-
-        <div class="project">
+        <div class="project-card">
             <div class="project-title"><a href="https://telemedai.ru/en/nauka/fantomy-i-medicinskie-simulyatory">🧪 Anthropomorphic Phantoms</a></div>
-            <div class="project-desc">
-                Tissue‑mimicking models for ultrasound training and algorithm validation.
-            </div>
+            <div class="project-desc">Tissue‑mimicking models for ultrasound training and algorithm validation.</div>
+            <div class="project-schema">3D‑printed · Validated · Open STL</div>
         </div>
-
-        <div class="project">
+        <div class="project-card">
             <div class="project-title">🥽 Augmented Reality</div>
-            <div class="project-desc">
-                AR navigation for ultrasound‑guided interventions and medical education.
+            <div class="project-desc">AR navigation for ultrasound‑guided interventions and medical education.</div>
+            <div class="project-schema">Real‑time overlay · Needle tracking</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== WHAT WE OFFER ==================== -->
+<div id="offer">
+    <div class="offer-block">
+        <h3>🤝 What we offer to partners & collaborators</h3>
+        <ul>
+            <li>✔ <strong>Open‑source C++ framework (RUFUS)</strong> for research & prototyping</li>
+            <li>✔ <strong>Custom tissue‑mimicking phantoms</strong> (3D‑printed, clinically validated)</li>
+            <li>✔ <strong>AR navigation modules</strong> for ultrasound‑guided interventions</li>
+            <li>✔ <strong>Open datasets</strong> (raw RF signals, phantom designs, validation data)</li>
+            <li>✔ <strong>Joint publications, reproducibility packages, and student supervision</strong></li>
+        </ul>
+        <p style="margin-top: 0.75rem; margin-bottom: 0;"><strong>Need something else?</strong> Just ask — we love challenging tasks.</p>
+    </div>
+</div>
+
+<!-- ==================== OPEN DATASETS ==================== -->
+<div id="datasets">
+    <h2>📂 Open Datasets</h2>
+    <p>We believe in reproducible research. Our datasets are freely available for academic use under <strong>CC BY-NC-SA</strong> license.</p>
+    
+    <div class="datasets-grid">
+        <!-- Dataset 1: Doppler Twinkling Artifact (главный) -->
+        <div class="dataset-card featured">
+            <div class="dataset-title">✨ Doppler Twinkling Artifact Database</div>
+            <div class="dataset-desc">Raw RF signals (10.5 GB) from kidney stones, microcalcifications, and phantoms. Includes viewer software.</div>
+            <div class="dataset-meta">
+                <span class="badge badge-featured">⭐ Featured</span>
+                <span class="badge badge-size">10.5 GB</span>
+            </div>
+            <div class="dataset-meta">
+                <strong>📄 Paper:</strong> Leonov et al., <em>J Digital Diagnostics</em>, 2021<br>
+                <strong>🔗 Data:</strong> <a href="https://mosmed.ai/datasets/ultrasound_doppler_twinkling_artifact" target="_blank">mosmed.ai →</a><br>
+                <strong>💻 Code:</strong> <a href="https://github.com/Center-of-Diagnostics-and-Telemedicine/TwinklingDatasetDisplay.git" target="_blank">GitHub: TwinklingDatasetDisplay</a>
+            </div>
+        </div>
+        
+        <!-- Dataset 2: Transcranial Ultrasound Phantom -->
+        <div class="dataset-card">
+            <div class="dataset-title">🧠 Transcranial Ultrasound Phantom</div>
+            <div class="dataset-desc">Raw RF data + B-mode images from custom skull-mimicking phantom for transcranial imaging.</div>
+            <div class="dataset-meta">
+                <strong>📄 Paper:</strong> Leonov et al., Int J CARS 2022<br>
+                <strong>🔗 Status:</strong> <span class="badge badge-soon">Under preparation</span> <a href="#">request early access →</a>
+            </div>
+        </div>
+        
+        <!-- Dataset 3: Anthropomorphic Neck Phantom -->
+        <div class="dataset-card">
+            <div class="dataset-title">🦷 Anthropomorphic Neck Phantom</div>
+            <div class="dataset-desc">Ultrasound images + STL files for 3D printing. Validated for training and algorithm testing.</div>
+            <div class="dataset-meta">
+                <strong>📄 Paper:</strong> Leonov et al., Int J CARS 2024<br>
+                <strong>🔗 Status:</strong> <span class="badge badge-soon">Coming soon</span>
+            </div>
+        </div>
+    </div>
+    
+    <p style="margin-top: 15px; text-align: center; font-size: 0.9rem;">
+        📬 <strong>All datasets are free for non-commercial use.</strong> Questions? Contact us at <strong>leonovd.v@ya.ru</strong>
+    </p>
+</div>
+
+<!-- ==================== TEAM ==================== -->
+<div id="team">
+    <h2>👥 Principal Investigator</h2>
+    <div class="members-grid">
+        <div class="member">
+            <div class="member-photo"><img src="photo.jpg" alt="Dr. Denis Leonov"></div>
+            <div class="member-info">
+                <div class="member-name">Dr. Denis Leonov</div>
+                <div class="member-role">Leading Scientist & Scientific Supervisor</div>
+                <div class="member-desc">Ultrasound signal processing, phantom design, AR navigation</div>
+                <div class="member-links">
+                    <a href="https://github.com/drleonov">GitHub</a> ·
+                    <a href="https://scholar.google.ru/citations?user=uqSFx-cAAAAJ">Scholar</a> ·
+                    <a href="https://www.researchgate.net/profile/Denis-Leonov-2">RG</a> ·
+                    <a href="https://orcid.org/0000-0003-0916-6552">ORCID</a>
+                </div>
             </div>
         </div>
     </div>
 
-
-
- <!-- Principal Investigator -->
-    <h2>Principal Investigator</h2>
-    <div class="member">
-        <div class="member-photo"><img src="photo.jpg" alt="Dr. Denis Leonov"></div>
-        <div class="member-info">
-            <div class="member-name">Dr. Denis Leonov</div>
-            <div class="member-role">Leading Scientist and Scientific Supervisor of Moscow Ultrasound Lab</div>
-            <div class="member-desc">Ultrasound signal processing, phantom design, AR navigation</div>
-                        <div class="member-links" style="margin-top: 0.5rem;">
-                <a href="https://github.com/drleonov">GitHub</a> ·
-                <a href="https://scholar.google.ru/citations?user=uqSFx-cAAAAJ">Google Scholar</a> ·
-                <a href="https://www.researchgate.net/profile/Denis-Leonov-2">ResearchGate</a> ·
-                <a href="https://orcid.org/0000-0003-0916-6552">ORCID</a> ·
-                <a href="20260428_cv.pdf">CV</a>
+    <h2>🔬 Research Scientists</h2>
+    <div class="members-grid">
+        <div class="member">
+            <div class="member-photo"><img src="images/BulgakovaYV.jpg" alt="Yulia Bulgakova"></div>
+            <div class="member-info">
+                <div class="member-name">Yulia Bulgakova</div>
+                <div class="member-role">Junior Research Scientist / PhD Student</div>
+                <div class="member-desc">Ultrasound phantoms, tissue-mimicking materials, validation studies</div>
+            </div>
+        </div>
+        <div class="member">
+            <div class="member-photo"><img src="images/VlasovaOV.jpg" alt="Olga Vlasova"></div>
+            <div class="member-info">
+                <div class="member-name">Olga Vlasova</div>
+                <div class="member-role">Junior Research Scientist</div>
+                <div class="member-desc">Ultrasound phantoms, training models, experimental studies</div>
+            </div>
+        </div>
+        <div class="member">
+            <div class="member-photo"><img src="images/GrebennikovaVV.jpg" alt="Veronika Grebennikova"></div>
+            <div class="member-info">
+                <div class="member-name">Veronika Grebennikova</div>
+                <div class="member-role">Junior Research Scientist</div>
+                <div class="member-desc">3D-printed phantoms, ultrasound imaging, validation</div>
+            </div>
+        </div>
+        <div class="member">
+            <div class="member-photo"><span>👤</span></div>
+            <div class="member-info">
+                <div class="member-name">Marina Dubova</div>
+                <div class="member-role">Junior Research Scientist <span style="color:#e67e22;">(on parental leave)</span></div>
+                <div class="member-desc">Ultrasound phantoms, tissue-mimicking materials, validation studies</div>
             </div>
         </div>
     </div>
 
-    <!-- Team -->    
-    <h2>Research Scientists</h2>
+    <h2>🛠️ Technical Staff</h2>
+    <div class="members-grid">
+        <div class="member">
+            <div class="member-photo"><img src="images/BeliakovaED.jpg" alt="Ekaterina Belyakova"></div>
+            <div class="member-info">
+                <div class="member-name">Ekaterina Belyakova</div>
+                <div class="member-desc">Phantom fabrication, 3D printing, quality control</div>
+            </div>
+        </div>
+        <div class="member">
+            <div class="member-photo"><span>👤</span></div>
+            <div class="member-info">
+                <div class="member-name">Maria Tyrtyshnikova</div>
+                <div class="member-desc">Phantom assembly, material preparation, documentation</div>
+            </div>
+        </div>
+        <div class="member">
+            <div class="member-photo"><span>👤</span></div>
+            <div class="member-info">
+                <div class="member-name">Robert Zakharjan</div>
+                <div class="member-desc">3D printing, mold fabrication, equipment maintenance</div>
+            </div>
+        </div>
+        <div class="member">
+            <div class="member-photo"><span>👤</span></div>
+            <div class="member-info">
+                <div class="member-name">Arina Terzi</div>
+                <div class="member-desc">Augmented reality</div>
+            </div>
+        </div>
+        <div class="member">
+            <div class="member-photo"><img src="images/SerovAD.jpg" alt="Alexander Serov"></div>
+            <div class="member-info">
+                <div class="member-name">Alexander Serov</div>
+                <div class="member-desc">Augmented reality</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>📊 Analyst</h2>
+    <div class="members-grid">
+        <div class="member">
+            <div class="member-photo"><span>👤</span></div>
+            <div class="member-info">
+                <div class="member-name">Anna Akopova</div>
+                <div class="member-desc">Data analysis, research coordination, reporting</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>📋 Administration</h2>
+    <div class="members-grid">
+        <div class="member">
+            <div class="member-photo"><img src="images/VoroninaAA.jpg" alt="Anastasia Voronina"></div>
+            <div class="member-info">
+                <div class="member-name">Anastasia Voronina</div>
+                <div class="member-role">Administrator <span style="color:#e67e22;">(on parental leave)</span></div>
+                <div class="member-desc">Laboratory management, project coordination, documentation</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PUBLICATIONS ==================== -->
+<div id="publications">
+    <h2>📄 Selected Publications</h2>
     
-    <div class="member">
-        <div class="member-photo"><img src="images/BulgakovaYV.jpg" alt="Yulia Bulgakova"></div>
-        <div class="member-info">
-            <div class="member-name">Yulia Bulgakova</div>
-            <div class="member-role">Junior Research Scientist / PhD Student</div>
-            <div class="member-desc">Ultrasound phantoms, tissue-mimicking materials, validation studies</div>
-        </div>
+    <div class="publication-group">
+        <div class="pub-category">🔬 Ultrasound Signal Processing & RUFUS</div>
+        <ul>
+            <li>Leonov D., Kulberg N., Yakovleva T. <strong>Aberration correction by polynomial approximation for synthetic aperture ultrasound imaging</strong>. <em>Medical Physics</em>, 2024. <a href="https://doi.org/10.1002/mp.17078">DOI</a></li>
+        </ul>
     </div>
-
-    <div class="member">
-        <div class="member-photo"><img src="images/VlasovaOV.jpg" alt="Olga Vlasova"></div>
-        <div class="member-info">
-            <div class="member-name">Olga Vlasova</div>
-            <div class="member-role">Junior Research Scientist</div>
-            <div class="member-desc">Ultrasound phantoms, training models, experimental studies</div>
-        </div>
-    </div>
-
-    <div class="member">
-        <div class="member-photo"><img src="images/GrebennikovaVV.jpg" alt="Veronika Grebennikova"></div>
-        <div class="member-info">
-            <div class="member-name">Veronika Grebennikova</div>
-            <div class="member-role">Junior Research Scientist</div>
-            <div class="member-desc">3D-printed phantoms, ultrasound imaging, validation</div>
-        </div>
-    </div>
-
-    <div class="member">
-        <div class="member-photo"><span>📷</span></div>
-        <div class="member-info">
-            <div class="member-name">Marina Dubova</div>
-            <div class="member-role">Junior Research Scientist (currently on parental leave)</div>
-            <div class="member-desc">Ultrasound phantoms, tissue-mimicking materials, validation studies</div>
-        </div>
-    </div>
-
-    <h2>Technical Staff</h2>
     
-    <div class="member">
-        <div class="member-photo"><img src="images/BeliakovaED.jpg" alt="Ekaterina Belyakova"></div>
-        <div class="member-info">
-            <div class="member-name">Ekaterina Belyakova</div>
-             <!-- Team    <div class="member-role">Technician</div>  -->
-            <div class="member-desc">Phantom fabrication, 3D printing, quality control</div>
-        </div>
+    <div class="publication-group">
+        <div class="pub-category">🧪 Phantom Design & Validation</div>
+        <ul>
+            <li>Leonov D., Kodenko M, Leichenco D, Nasibullina A, Kulberg N. <strong>Design and validation of a phantom for transcranial ultrasonography</strong>. <em>Int J CARS</em>, 2022. <a href="https://doi.org/10.1007/s11548-022-02614-2">DOI</a></li>
+            <li>Leonov D., Venidiktova D., Costa-Júnior J.F.S., Nasibullina A., Tarasova O., Pashinceva K., Vatsheva N., Bulgakova J., Kulberg N., Borsukov A., Saika M.J. <strong>Development of an anatomical breast phantom...</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-023-02911-4">DOI</a></li>
+            <li>Leonov D., Nasibullina A, Grebennikova V, Vlasova O, Bulgakova Yu, Belyakova E, Shestakova D, Costa-Junior JFS, Omelianskaya O., Vasiliev Yu. <strong>Design and evaluation of an anthropomorphic neck phantom...</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-024-03130-1">DOI</a></li>
+            <li>Grebennikova V., Leonov D., Zhou Z., Costa-Júnior J.F.S., Shestakova D., Saikia M.J., Vetsheva N., Kulberg N., Pashinceva K., Omelianskaya O., Vasilev Y. <strong>Design and validation of a technology for 3D printing training phantoms for ultrasound imaging</strong>. <em>Phys Eng Sci Med</em>, 2026. <a href="https://doi.org/10.1007/S13246-025-01670-7">DOI</a></li>
+        </ul>
     </div>
-
-    <div class="member">
-        <div class="member-photo"><span>📷</span></div>
-        <div class="member-info">
-            <div class="member-name">Maria Tyrtyshnikova</div>
-            <!-- Team    <div class="member-role">Technician</div>  -->
-            <div class="member-desc">Phantom assembly, material preparation, documentation</div>
-        </div>
-    </div>
-
-    <div class="member">
-        <div class="member-photo"><span>📷</span></div>
-        <div class="member-info">
-            <div class="member-name">Robert Zakharjan</div>
-           <!-- Team    <div class="member-role">Technician</div>  -->
-            <div class="member-desc">3D printing, mold fabrication, equipment maintenance</div>
-        </div>
-    </div>
-
-    <div class="member">
-        <div class="member-photo"><span>📷</span></div>
-        <div class="member-info">
-            <div class="member-name">Arina Terzi</div>
-            <!-- Team    <div class="member-role">Technician</div>  -->
-            <div class="member-desc">Augmented reality</div>
-        </div>
-    </div>
-
-    <div class="member">
-        <div class="member-photo"><img src="images/SerovAD.jpg" alt="Alexander Serov"></div>
-        <div class="member-info">
-            <div class="member-name">Alexander Serov</div>
-            <!-- Team    <div class="member-role">Technician</div>  -->
-            <div class="member-desc">Augmented reality</div>
-        </div>
-    </div>
-
-    <h2>Analyst</h2>
     
-    <div class="member">
-        <div class="member-photo"><span>📷</span></div>
-        <div class="member-info">
-            <div class="member-name">Anna Akopova</div>
-            <!-- <div class="member-role">Analyst</div>  -->
-            <div class="member-desc">Data analysis, research coordination, reporting</div>
-        </div>
+    <div class="publication-group">
+        <div class="pub-category">📊 Open Data & Reproducibility</div>
+        <ul>
+            <li>Leonov D.V., Reshetnikov R.V., Kulberg N.S., Nasibullina A.A., Gromov A.I. <strong>Doppler twinkling artifact observations: an open-access database of raw ultrasonic signals</strong>. <em>Journal of Digital Diagnostics</em>, 2021. <a href="https://doi.org/10.17816/DD76511">DOI</a> — <a href="https://mosmed.ai/datasets/ultrasound_doppler_twinkling_artifact">📂 Dataset (10.5 GB)</a></li>
+        </ul>
     </div>
+</div>
 
-    <h2>Administration</h2>
-    
-    <div class="member">
-        <div class="member-photo"><img src="images/VoroninaAA.jpg" alt="Anastasia Voronina"></div>
-        <div class="member-info">
-            <div class="member-name">Anastasia Voronina</div>
-            <div class="member-role">Administrator (currently on parental leave)</div>
-            <div class="member-desc">Laboratory management, project coordination, documentation</div>
-        </div>
-    </div>
-
-    <!-- Publications -->
-    <h2>Selected Publications</h2>
+<!-- ==================== NEWS ==================== -->
+<div id="news">
+    <h2>📰 In the News</h2>
     <ul>
-        <li>Leonov D., Kulberg N., Yakovleva T. <strong>Aberration correction by polynomial approximation for synthetic aperture ultrasound imaging</strong>. <em>Medical Physics</em>, 2024. <a href="https://doi.org/10.1002/mp.17078">DOI</a></li>
-        <li>Leonov D., Kodenko M, Leichenco D, Nasibullina A, Kulberg N. <strong>Design and validation of a phantom for transcranial ultrasonography</strong>. <em>Int J CARS</em>, 2022. <a href="https://doi.org/10.1007/s11548-022-02614-2">DOI</a></li>
-        <li>Leonov D., Venidiktova D., Costa-Júnior J.F.S., Nasibullina A., Tarasova O., Pashinceva K., Vatsheva N., Bulgakova J., Kulberg N., Borsukov A., Saika M.J. <strong>Development of an anatomical breast phantom...</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-023-02911-4">DOI</a></li>
-        <li>Leonov D., Nasibullina A, Grebennikova V, Vlasova O, Bulgakova Yu, Belyakova E, Shestakova D, Costa-Junior JFS, Omelianskaya O., Vasiliev Yu. <strong>Design and evaluation of an anthropomorphic neck phantom...</strong>. <em>Int J CARS</em>, 2024. <a href="https://doi.org/10.1007/s11548-024-03130-1">DOI</a></li>
-        <li>Grebennikova V., Leonov D., Zhou Z., Costa-Júnior J.F.S., Shestakova D., Saikia M.J., Vetsheva N., Kulberg N., Pashinceva K., Omelianskaya O., Vasilev Y. <strong>Design and validation of a technology for 3D printing training phantoms for ultrasound imaging</strong>. <em>Phys Eng Sci Med</em>, 2026. <a href="https://doi.org/10.1007/S13246-025-01670-7">DOI</a></li>
+        <li class="news-item">
+            <a href="https://tvbrics.com/en/news/scientists-from-russia-have-developed-medical-phantoms/" target="_blank">Scientists from Russia have developed medical phantoms</a>
+            <div class="news-date">TV BRICS</div>
+        </li>
+        <li class="news-item">
+            <a href="https://www.auntminnie.com/clinical-news/ultrasound/article/15708609/russian-researchers-highlight-fetal-ultrasound-training-phantom" target="_blank">Russian researchers highlight fetal ultrasound training phantom</a>
+            <div class="news-date">AuntMinnie.com</div>
+        </li>
     </ul>
+</div>
 
-<h2>In the News</h2>
-<ul>
-    <li>
-        <a href="https://tvbrics.com/en/news/scientists-from-russia-have-developed-medical-phantoms/" target="_blank" rel="noopener noreferrer">
-            Scientists from Russia have developed medical phantoms
-        </a>
-        <br><span style="font-size: 0.85rem; color: #4a5568;">TV BRICS</span>
-    </li>
-    <li>
-        <a href="https://www.auntminnie.com/clinical-news/ultrasound/article/15708609/russian-researchers-highlight-fetal-ultrasound-training-phantom" target="_blank" rel="noopener noreferrer">
-            Russian researchers highlight fetal ultrasound training phantom
-        </a>
-        <br><span style="font-size: 0.85rem; color: #4a5568;">AuntMinnie.com</span>
-    </li>
-</ul>
-    
-    <!-- Join Us -->
-    <h2>Join Us</h2>
+<!-- ==================== JOIN US ==================== -->
+<div id="join">
+    <h2>✉️ Join Us</h2>
     <p>
         We are always looking for motivated students, postdocs, and engineers. 
         If you are interested in ultrasound imaging, signal processing, medical phantoms, 
         or augmented reality — please contact us at <strong>leonovd.v@ya.ru</strong>.
     </p>
+</div>
 
+<!-- ==================== LAB PHOTO ==================== -->
+<div style="text-align: center; margin: 2rem 0;">
+    <img src="images/lab-group.jpg" alt="Moscow Ultrasound Lab team" 
+         style="width: 100%; max-width: 600px; border-radius: 12px;">
+</div>
 
-    <!-- Lab Photo -->
-    <div style="text-align: center; margin: 2rem 0;">
-         <img src="images/lab-group.jpg" alt="Moscow Ultrasound Lab team" 
-             style="width: 100%; max-width: 600px; border-radius: 12px;">
-        <p style="color: #4a5568; font-size: 0.85rem; margin-top: 0.5rem;">
-        </p>
-    </div>
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+    Moscow Ultrasound Lab — Last updated: May 2026
+</div>
 
-    <div class="footer">
-        Moscow Ultrasound Lab
-    </div>
 </body>
 </html>
