@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MosMedAR — Augmented Reality for Medical Education & Imaging — Moscow Ultrasound Lab</title>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #222;
+            background: #fafafa;
+        }
+        h1, h2, h3 { color: #0a2f6c; }
+        h1 {
+            border-bottom: 3px solid #0a2f6c;
+            padding-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+        h2 {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #2c5282;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #2c5282;
+            padding-left: 1rem;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            margin-bottom: 30px;
+            border-radius: 0 0 12px 12px;
+        }
+        .nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2c7da0;
+            font-weight: 500;
+            padding: 5px 0;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover { color: #1a5a7a; text-decoration: underline; }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .project-card h3 { margin-top: 0; margin-bottom: 0.5rem; }
+        .project-status {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #2d3748;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+        .project-status.active { background: #c6f6d5; color: #22543d; }
+        .project-status.planning { background: #fefcbf; color: #744210; }
+        .tag {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #2d3748;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        .publication-list {
+            margin: 1rem 0;
+            padding-left: 1.25rem;
+        }
+        .publication-list li {
+            margin: 0.5rem 0;
+        }
+        .collab-box {
+            background: #f0f7ff;
+            border-left: 4px solid #2c7da0;
+            border-radius: 12px;
+            padding: 0.1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+        }
+        a { color: #2c5282; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 0.85rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav>
+    <div class="nav-links">
+        <a href="/">🏠 Home</a>
+        <a href="/#projects">📁 Projects</a>
+        <a href="/#offer">🤝 For Partners</a>
+        <a href="/#datasets">📂 Open Data</a>
+        <a href="/#team">👥 Team</a>
+        <a href="/phantoms/">🧪 Phantoms</a>
+        <a href="/ar/">🥽 MosMedAR</a>
+        <a href="/#join">✉️ Join Us</a>
+    </div>
+</nav>
+
+<!-- ==================== HEADER ==================== -->
+<h1>🥽 MosMedAR</h1>
+<div class="subtitle">
+    Moscow Medical Augmented Reality — Intelligent visualization for education and image interpretation
+</div>
+
+<p>
+    <strong>MosMedAR</strong> is a research project developing mobile AR applications for medical education and training.
+    We create accessible, scalable, and evidence‑based AR tools that improve spatial anatomy understanding,
+    medical image interpretation (CT, MRI, ultrasound), and hands‑on skills on physical phantoms.
+</p>
+
+<!-- ==================== TWO MAIN PRODUCTS ==================== -->
+<h2>📱 Our AR Applications</h2>
+<div class="projects-grid">
+    
+    <!-- PhantomAR -->
+    <div class="project-card">
+        <div class="project-status active">🟢 Active development · RCT ongoing</div>
+        <h3>🧪 PhantomAR</h3>
+        <p>AR visualization of multimodal medical images (CT, MRI, ultrasound) over physical phantoms. Designed for anatomy education and radiology training.</p>
+        <div>
+            <span class="tag">thyroid phantom</span>
+            <span class="tag">head phantom</span>
+            <span class="tag">abdominal phantom</span>
+            <span class="tag">Unity + Vuforia</span>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.85rem;">
+            <strong>Status:</strong> Active development · RCT in preparation (Q3‑Q4 2026)<br>
+            <strong>Target journal:</strong> <em>Computers & Education (Q1, IF ~10.5)</em>
+        </div>
+    </div>
+    
+    <!-- DICOM-X -->
+    <div class="project-card">
+        <div class="project-status active">🟢 Active development · Prototype ready</div>
+        <h3>📊 DICOM‑X</h3>
+        <p>AR DICOM viewer with multiplanar reconstruction (axial, sagittal, coronal). Visualize real patient CT/MRI series in augmented reality space.</p>
+        <div>
+            <span class="tag">DICOM parser</span>
+            <span class="tag">multiplanar</span>
+            <span class="tag">crosshair sync</span>
+            <span class="tag">Android</span>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.85rem;">
+            <strong>Status:</strong> Prototype ready · Technical validation ongoing<br>
+            <strong>Target journal:</strong> <em>Medical Image Analysis (Q1, IF ~8.0)</em>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PUBLICATION PLAN ==================== -->
+<h2>📄 Publication Plan (MosMedAR series)</h2>
+<div class="collab-box">
+    <p style="margin: 0.75rem 0;"><strong>Our research program includes five planned articles:</strong></p>
+</div>
+
+<div class="projects-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+    <div class="project-card">
+        <h3>📘 Article 1</h3>
+        <p><strong>PhantomAR RCT</strong> — Thyroid phantom with AR vs traditional learning (post‑test, delayed retention, NASA‑TLX).</p>
+        <div><span class="tag">RCT</span> <span class="tag">3 groups</span> <span class="tag">n=96‑105</span></div>
+        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #e67e22;">🟡 In preparation · Submission Q4 2026</div>
+    </div>
+    <div class="project-card">
+        <h3>📘 Article 2</h3>
+        <p><strong>Multi‑phantom technical validation</strong> — PhantomAR on thyroid, head, and abdominal phantoms.</p>
+        <div><span class="tag">IEEE Access / Virtual Reality</span> <span class="tag">Q1/Q2</span></div>
+        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #e67e22;">🟡 Planned</div>
+    </div>
+    <div class="project-card">
+        <h3>📘 Article 3</h3>
+        <p><strong>DICOM‑X technical paper</strong> — AR DICOM viewer with multiplanar reconstruction.</p>
+        <div><span class="tag">Medical Image Analysis</span> <span class="tag">Q1</span></div>
+        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #e67e22;">🟡 Prototype ready · Manuscript in progress</div>
+    </div>
+    <div class="project-card">
+        <h3>📘 Article 4</h3>
+        <p><strong>DICOM‑X vs RadiAnt RCT</strong> — AR vs traditional DICOM viewer for anatomy identification.</p>
+        <div><span class="tag">Radiology: AI / J Digital Imaging</span> <span class="tag">Q1</span></div>
+        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #e67e22;">🟡 Planned (after Article 3)</div>
+    </div>
+    <div class="project-card">
+        <h3>📘 Article 5</h3>
+        <p><strong>Smartphone vs AR glasses</strong> — Cross‑platform comparison (PhantomAR + DICOM‑X).</p>
+        <div><span class="tag">NPJ Digital Medicine / Sci Rep</span> <span class="tag">Q1</span></div>
+        <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #e67e22;">🟡 Planned (after Articles 1‑4)</div>
+    </div>
+</div>
+
+<!-- ==================== COLLABORATION OFFER ==================== -->
+<h2>🤝 Collaborate with Us</h2>
+<div class="collab-box">
+    <p>We are actively seeking partners for <strong>clinical validation and multi‑center RCTs</strong>. If you represent a medical university, radiology department, or simulation center — let's work together.</p>
+    <p><strong>What we offer:</strong></p>
+    <ul>
+        <li>✔ Access to PhantomAR and DICOM‑X for research and education</li>
+        <li>✔ Joint publications in Q1 journals (RCTs, technical validations)</li>
+        <li>✔ Co‑authorship for clinical partners providing participants or expertise</li>
+        <li>✔ Customization of AR tools for your specific phantoms or DICOM datasets</li>
+    </ul>
+    <p><strong>Interested?</strong> Contact us at <strong>leonovd.v@ya.ru</strong> with subject "AR collaboration".</p>
+</div>
+
+<!-- ==================== CALL FOR STUDENTS ==================== -->
+<h2>🔭 Join the MosMedAR Team</h2>
+<p>
+    We are looking for <strong>motivated students (BSc/MSc/PhD)</strong> and <strong>engineers</strong> with interest in:
+    computer vision, Unity/C# development, human‑computer interaction, or clinical translation of AR.
+</p>
+<p>
+    <strong>Open positions:</strong> Unity developer (AR), research assistant for RCT coordination, medical image processing specialist.
+</p>
+<p>
+    📬 Contact: <strong>leonovd.v@ya.ru</strong> (subject: "MosMedAR application")
+</p>
+
+<!-- ==================== CURRENT STATUS & ETHICS ==================== -->
+<h2>📋 Project Status</h2>
+<ul>
+    <li><strong>PhantomAR:</strong> Prototype completed · RCT design finalized · Ethics submission in progress (Smolensk State Medical University)</li>
+    <li><strong>DICOM‑X:</strong> Technical prototype ready · DICOM parser integrated · Multiplanar reconstruction working</li>
+    <li><strong>Article 1 (RCT):</strong> Pre‑registration on OSF / ClinicalTrials.gov scheduled for Q3 2026</li>
+    <li><strong>Collaboration:</strong> Open for clinical partners and co‑authors</li>
+</ul>
+
+<!-- ==================== CITATION (preprints / soon) ==================== -->
+<h2>📌 How to cite</h2>
+<p>For now, please refer to our project description and available preprints (full papers under review).<br>
+When citing the MosMedAR platform, use:</p>
+<pre style="background: #f1f1f1; padding: 0.75rem; border-radius: 8px; font-size: 0.8rem;">
+MosMedAR Project Team (2026). MosMedAR: Augmented Reality for Medical Education and Imaging.
+Moscow Ultrasound Lab. https://drleonov.github.io/ar/
+</pre>
+<p>Specific article citations will be added when published.</p>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+    Moscow Ultrasound Lab — MosMedAR: AR for Medical Education & Imaging<br>
+    <a href="/">Back to main page</a>
+</div>
+
+</body>
+</html>
