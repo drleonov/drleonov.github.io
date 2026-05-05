@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUFUS — Open‑source C++ Ultrasound Framework · Moscow Ultrasound Lab</title>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #222;
+            background: #fafafa;
+        }
+        h1, h2, h3 { color: #0a2f6c; }
+        h1 { border-bottom: 3px solid #0a2f6c; padding-bottom: 0.5rem; margin-top: 1rem; }
+        h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; margin-top: 2rem; }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #2c5282;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid #2c5282;
+            padding-left: 1rem;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            margin-bottom: 30px;
+            border-radius: 0 0 12px 12px;
+        }
+        .nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2c7da0;
+            font-weight: 500;
+            padding: 5px 0;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover { color: #1a5a7a; text-decoration: underline; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #2d3748;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        .paper-list {
+            margin: 1rem 0;
+            padding-left: 1.25rem;
+        }
+        .paper-list li {
+            margin: 0.75rem 0;
+        }
+        .code-block {
+            background: #1e1e2f;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .footer {
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
+        }
+        a { color: #2c5282; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 700px) {
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 0.85rem; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav>
+    <div class="nav-links">
+        <a href="/">🏠 Home</a>
+        <a href="/#projects">📁 Projects</a>
+        <a href="/#offer">🤝 For Partners</a>
+        <a href="/#datasets">📂 Open Data</a>
+        <a href="/#team">👥 Team</a>
+        <a href="/phantoms/">🧪 Phantoms</a>
+        <a href="/ar/">🥽 MosMedAR</a>
+        <a href="/rufus/">🖥️ RUFUS</a>
+        <a href="/#join">✉️ Join Us</a>
+    </div>
+</nav>
+
+<!-- ==================== HEADER ==================== -->
+<h1>🖥️ RUFUS</h1>
+<div class="subtitle">
+    <strong>R</strong>F <strong>U</strong>ltrasound <strong>F</strong>ramework for <strong>U</strong>niversal <strong>S</strong>imulations
+</div>
+
+<p>
+    <strong>RUFUS</strong> is an open‑source C++ platform for ultrasound research on real radio‑frequency (RF) data.
+    It reads raw data from Sonomed‑500 and Verasonics scanners and provides a complete processing pipeline:
+    B‑mode, color flow imaging (CFM), power Doppler, tissue Doppler, synthetic aperture focusing with aberration correction,
+    and compression elastography. The source code is freely available under the <strong>MIT license</strong>.
+</p>
+
+<!-- ==================== GITHUB BADGES ==================== -->
+<div style="background: #e6f7ff; padding: 1rem; border-radius: 12px; text-align: center; margin: 1rem 0;">
+    <p style="margin: 0;">
+        🔗 <strong><a href="https://github.com/moscow-ultrasound-lab/rufus" target="_blank">GitHub: moscow-ultrasound-lab/rufus</a></strong> &nbsp;|&nbsp;
+        📦 <strong><a href="https://doi.org/10.6084/m9.figshare.18495170.v1" target="_blank">DOI: 10.6084/m9.figshare.18495170.v1</a></strong> &nbsp;|&nbsp;
+        📄 <strong><a href="https://doi.org/10.1002/mp.17078" target="_blank">Medical Physics 2024 paper</a></strong>
+    </p>
+</div>
+
+<!-- ==================== KEY FEATURES ==================== -->
+<h2>⚙️ Key features</h2>
+<div class="features-grid">
+    <div class="feature-card">
+        <h3>📊 Multi‑scanner RF input</h3>
+        <p>Supports raw RF data from <strong>Sonomed‑500</strong> (production) and <strong>Verasonics</strong> (development). Extensible binary format interface for other scanners.</p>
+        <span class="badge">Sonomed‑500</span>
+        <span class="badge">Verasonics</span>
+        <span class="badge">40 MHz sampling</span>
+    </div>
+    <div class="feature-card">
+        <h3>🩻 B‑mode & synthetic aperture</h3>
+        <p>Conventional and synthetic aperture beamforming. Aberration correction using Legendre polynomial approximation (up to 3.08× peak intensity recovery).</p>
+        <span class="badge">real‑time B‑mode (117 fps)</span>
+        <span class="badge">SA focusing</span>
+    </div>
+    <div class="feature-card">
+        <h3>🩸 Color flow imaging (CFM)</h3>
+        <p>Complete CFM pipeline: clutter filtering (polynomial, SVD), masking (91.6% diagnostic efficiency), velocity estimation via autocorrelation.</p>
+        <span class="badge">power Doppler</span>
+        <span class="badge">tissue Doppler</span>
+        <span class="badge">twinkling artifact suppression</span>
+    </div>
+    <div class="feature-card">
+        <h3>🌀 Synthetic aperture & aberration correction</h3>
+        <p>Virtual point sources, post‑processing focusing, Legendre polynomial‑based phase correction. Validated on photopolymer and ex vivo temporal bone.</p>
+        <span class="badge">RMS width ↓60%</span>
+        <span class="badge">peak intensity ↑3.08×</span>
+    </div>
+    <div class="feature-card">
+        <h3>🔧 Compression elastography</h3>
+        <p>Strain imaging by comparing B‑mode frames before/after mechanical compression. Works with our anthropomorphic phantoms.</p>
+        <span class="badge">compatible with breast/neck phantoms</span>
+    </div>
+    <div class="feature-card">
+        <h3>⚡ High performance (C++17)</h3>
+        <p>140–170× faster than MATLAB‑based simulators (Field II, SIMUS). B‑mode conventional at 8.5 ms/frame on standard CPU.</p>
+        <span class="badge">CMake</span>
+        <span class="badge">no GPU required</span>
+    </div>
+</div>
+
+<!-- ==================== PUBLICATIONS (RUFUS CORE) ==================== -->
+<h2>📄 Core publications (RUFUS)</h2>
+<div class="features-grid" style="grid-template-columns: 1fr;">
+    <div class="feature-card">
+        <h3>📘 RUFUS Core & Aberration Correction</h3>
+        <ul class="paper-list">
+            <li><strong>Leonov D., Kulberg N., Yakovleva T.</strong> Aberration correction by polynomial approximation for synthetic aperture ultrasound imaging. <em>Medical Physics</em>, 2024. <a href="https://doi.org/10.1002/mp.17078" target="_blank">DOI: 10.1002/mp.17078</a><br>
+            ➜ <a href="https://doi.org/10.6084/m9.figshare.18495170.v1" target="_blank">📂 Data & code (Figshare)</a></li>
+            <li><strong>Leonov D.V., Kulberg N.S., Yakovleva T.V., Solovyova P.D.</strong> Approach to detecting aberrations in transcranial ultrasound imaging. <em>Acoustical Physics</em>, 2022. <a href="https://doi.org/10.1134/S106377102202004X" target="_blank">DOI</a></li>
+            <li><strong>Leonov D., Kulberg N., Yakovleva T., et al.</strong> Innovative aberration correction in ultrasound diagnostics with direct phase estimation. <em>Phys Eng Sci Med</em>, 2023. <a href="https://doi.org/10.1007/s13246-023-01338-0" target="_blank">DOI</a></li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <h3>📘 Color Flow Imaging & Clutter Filtering</h3>
+        <ul class="paper-list">
+            <li><strong>Leonov D.V.</strong> Efficiency of ultrasound color flow imaging in the presence of twinkling artifact. <em>Springer Nature</em>, 2024.<br>
+            ➜ Masks achieve 91.6% diagnostic efficiency (phase gradient + pairwise correlation).</li>
+            <li><strong>Leonov D.V., Kulberg N.S., Fin V.A., et al.</strong> Clutter Filtering for Diagnostic Ultrasound Color Flow Imaging. <em>Biomedical Engineering</em>, 2019, 53:217–221. <a href="https://doi.org/10.1007/s10527-019-09912-1" target="_blank">DOI: 10.1007/s10527-019-09912-1</a></li>
+            <li><strong>Leonov D.V., Kulberg N.S., Podmoskovnaya V.A., et al.</strong> Comparison of filtering techniques in ultrasound color flow imaging. <em>Biomedical Engineering</em>, 2019, 53:97–101. <a href="https://doi.org/10.1007/s10527-019-09885-1" target="_blank">DOI</a></li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <h3>📘 Twinkling Artifact & Open Datasets</h3>
+        <ul class="paper-list">
+            <li><strong>Leonov D.V., Kulberg N.S., Gromov A.I., et al.</strong> Causes of Ultrasound Doppler Twinkling Artifact. <em>Acoustical Physics</em>, 2018, 64:105–114. <a href="https://doi.org/10.1134/S1063771018010128" target="_blank">DOI</a></li>
+            <li><strong>Leonov D.V., Reshetnikov R.V., Kulberg N.S., et al.</strong> Doppler twinkling artifact observations: open‑access database of raw ultrasonic signals. <em>Digital Diagnostics</em>, 2021, 2(3):261–276. <a href="https://doi.org/10.17816/DD76511" target="_blank">DOI</a> — <a href="https://mosmed.ai/datasets/ultrasound_doppler_twinkling_artifact" target="_blank">📂 10.5 GB dataset</a></li>
+            <li><strong>Leonov D.V., Kulberg N.S., Gromov A.I., et al.</strong> Diagnostic mode detecting solid mineral inclusions. <em>Acoustical Physics</em>, 2018, 64:624–636. <a href="https://doi.org/10.1134/S1063771018050068" target="_blank">DOI</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ==================== PUBLICATION PLAN (FUTURE) ==================== -->
+<h2>📌 Publication plan (RUFUS series)</h2>
+<div class="features-grid">
+    <div class="feature-card">
+        <h3>🟢 Article 1 · Core</h3>
+        <p><strong>Status:</strong> 80% · target <em>Comput Methods Programs Biomed (Q1)</em><br>
+        RUFUS architecture, multi‑scanner RF input, B‑mode, CFM, synthetic aperture, elastography. Open source MIT.</p>
+    </div>
+    <div class="feature-card">
+        <h3>🟡 Article 2 · Validation benchmark</h3>
+        <p><strong>Status:</strong> planned · target <em>IEEE T‑UFFC / UMB</em><br>
+        Quantitative comparison against Field II, k‑Wave, SIMUS on synthetic and real RF data.</p>
+    </div>
+    <div class="feature-card">
+        <h3>🟠 Article 3 · Advanced CFM methods</h3>
+        <p><strong>Status:</strong> 70% · target <em>Medical Physics / IEEE TMI</em><br>
+        Clutter filtering, masking (91.6% efficiency), aberration correction, integrated into RUFUS.</p>
+    </div>
+    <div class="feature-card">
+        <h3>🟡 Article 5 · Open datasets</h3>
+        <p><strong>Status:</strong> 30% · target <em>Scientific Data / Data in Brief</em><br>
+        Raw RF datasets, STL files for phantoms, benchmarking tools with DOIs.</p>
+    </div>
+</div>
+
+<!-- ==================== QUICK START / CODE EXAMPLE ==================== -->
+<h2>🚀 Quick start (example)</h2>
+<div class="code-block">
+    <pre style="margin: 0; color: #f8f8f2;">
+// Load raw RF data from Sonomed‑500
+RufusReader reader;
+reader.open("data/phantom_scan.dat");
+
+// Process conventional B‑mode
+BmodeImage bmode = processor.bmode(reader, params);
+
+// Color flow imaging (CFM)
+CfmParameters cfmParams;
+cfmParams.clutterFilter = ClutterFilter::Polynomial;
+cfmParams.maskRule = MaskRule::Combined;  // 91.6% efficiency
+CfmMap cfm = processor.cfm(reader, cfmParams);
+
+// Synthetic aperture with aberration correction
+SaParameters saParams;
+saParams.aberrationCorrection = true;
+saParams.polynomialOrder = 4;
+BmodeImage saImage = processor.syntheticAperture(reader, saParams);
+
+// Export to DICOM or PNG
+saImage.save("output.png");</pre>
+</div>
+<p>📁 Full examples and build instructions are available in the <a href="https://github.com/moscow-ultrasound-lab/rufus" target="_blank">GitHub repository</a>.</p>
+
+<!-- ==================== CITATION ==================== -->
+<h2>📖 How to cite RUFUS</h2>
+<p>If you use RUFUS in your research, please cite the core method paper:</p>
+<div class="code-block" style="background: #f1f1f1; color: #222;">
+    Leonov D., Kulberg N., Yakovleva T. (2024). Aberration correction by polynomial approximation<br>
+    for synthetic aperture ultrasound imaging. <em>Medical Physics</em>, 51:3292–3308.<br>
+    DOI: <a href="https://doi.org/10.1002/mp.17078" target="_blank">10.1002/mp.17078</a><br><br>
+    For the open‑source framework:<br>
+    Moscow Ultrasound Lab (2026). RUFUS: RF Ultrasound Framework for Universal Simulations.<br>
+    GitHub: <a href="https://github.com/moscow-ultrasound-lab/rufus" target="_blank">https://github.com/moscow-ultrasound-lab/rufus</a>
+</div>
+
+<!-- ==================== CONTRIBUTIONS / COLLABORATION ==================== -->
+<h2>🤝 Contributing & collaborations</h2>
+<p>We welcome contributions from the ultrasound community:</p>
+<ul>
+    <li>🔧 <strong>Add support for new scanners</strong> — implement the <code>RFReader</code> interface</li>
+    <li>🧪 <strong>Test RUFUS on your phantoms or in vivo data</strong> — we can co‑author validation studies</li>
+    <li>🐛 <strong>Report bugs or suggest enhancements</strong> via <a href="https://github.com/moscow-ultrasound-lab/rufus/issues" target="_blank">GitHub Issues</a></li>
+    <li>📘 <strong>Contribute to the documentation or examples</strong> — pull requests are welcome</li>
+</ul>
+<p>For collaboration inquiries, contact <strong>leonovd.v@ya.ru</strong> with subject "RUFUS collaboration".</p>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+    Moscow Ultrasound Lab — RUFUS: open‑source C++ framework for reproducible ultrasound research<br>
+    <a href="/">Back to main page</a> | <a href="https://github.com/moscow-ultrasound-lab/rufus" target="_blank">GitHub</a> | <a href="https://doi.org/10.6084/m9.figshare.18495170.v1" target="_blank">Zenodo DOI</a>
+</div>
+
+</body>
+</html>
