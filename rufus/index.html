@@ -242,14 +242,14 @@
     </div>
 </div>
 
-    <!-- ==================== DOWNLOAD & DATASETS ==================== -->
+<!-- ==================== DOWNLOAD & OPEN DATASETS ==================== -->
 <h2>📦 Download & Open Datasets</h2>
 <div class="datasets-grid">
     
     <!-- Карточка 1: RUFUS Setup -->
     <div class="dataset-card featured">
         <div class="dataset-title">⚙️ RUFUS v0.1.0 (Windows)</div>
-        <div class="dataset-desc">Pre‑compiled executable for Windows. Includes B‑mode, synthetic aperture, CFM, and compression elastography.</div>
+        <div class="dataset-desc">Pre‑compiled executable for Windows. Includes B‑mode, synthetic aperture, CFM, and compression elastography. After installation, run <code>rufus-main.exe</code> and choose the desired mode from the menu.</div>
         <div class="dataset-meta">
             <span class="badge badge-featured">⭐ First release</span>
             <span class="badge badge-size">Windows 10/11</span>
@@ -368,33 +368,6 @@
         <p><strong>Status:</strong> 30% · target <em>Scientific Data / Data in Brief</em><br>
         Raw RF datasets, benchmarking tools with DOIs.</p>
     </div>
-</div>
-
-<!-- ==================== QUICK START / CODE EXAMPLE ==================== -->
-<h2>🚀 Quick start (example)</h2>
-<div class="code-block">
-    <pre style="margin: 0; color: #f8f8f2;">
-// Load raw RF data from Sonomed‑500
-RufusReader reader;
-reader.open("data/phantom_scan.dat");
-
-// Process conventional B‑mode
-BmodeImage bmode = processor.bmode(reader, params);
-
-// Color flow imaging (CFM)
-CfmParameters cfmParams;
-cfmParams.clutterFilter = ClutterFilter::Polynomial;
-cfmParams.maskRule = MaskRule::Combined;  // 91.6% efficiency
-CfmMap cfm = processor.cfm(reader, cfmParams);
-
-// Synthetic aperture with aberration correction
-SaParameters saParams;
-saParams.aberrationCorrection = true;
-saParams.polynomialOrder = 4;
-BmodeImage saImage = processor.syntheticAperture(reader, saParams);
-
-// Export to DICOM or PNG
-saImage.save("output.png");</pre>
 </div>
         
 <!-- ==================== CITATION ==================== -->
