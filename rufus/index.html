@@ -201,6 +201,61 @@
     </div>
 </div>
 
+    <!-- ==================== DOWNLOAD & DATASETS ==================== -->
+<h2>📦 Download & Open Datasets</h2>
+<div class="datasets-grid">
+    
+    <!-- Карточка 1: RUFUS Setup -->
+    <div class="dataset-card featured">
+        <div class="dataset-title">⚙️ RUFUS v0.1.0 (Windows)</div>
+        <div class="dataset-desc">Pre‑compiled executable for Windows. Includes B‑mode, synthetic aperture, CFM, and compression elastography.</div>
+        <div class="dataset-meta">
+            <span class="badge badge-featured">⭐ First release</span>
+            <span class="badge badge-size">Windows 10/11</span>
+        </div>
+        <div class="dataset-meta">
+            <strong>🔗 Setup:</strong> <a href="https://github.com/moscow-ultrasound-lab/rufus/releases/download/v0.1.0/RUFUS_v0.1.0_Setup.exe" target="_blank">Download RUFUS_v0.1.0_Setup.exe →</a><br>
+            <strong>📄 Source code:</strong> <a href="https://github.com/moscow-ultrasound-lab/rufus" target="_blank">GitHub repository →</a>
+        </div>
+    </div>
+    
+    <!-- Карточка 2: CFM / Doppler Twinkling Dataset -->
+    <div class="dataset-card">
+        <div class="dataset-title">✨ Doppler Twinkling Artifact Database</div>
+        <div class="dataset-desc">Raw RF signals (10.5 GB) for color flow imaging and twinkling artifact studies. Includes viewer software.</div>
+        <div class="dataset-meta">
+            <span class="badge" style="background:#2c7da0; color:white;">10.5 GB</span>
+            <span class="badge" style="background:#2c7da0; color:white;">CFM</span>
+        </div>
+        <div class="dataset-meta">
+            <strong>📄 Paper:</strong> <a href="https://doi.org/10.17816/DD76511" target="_blank">Leonov et al., Digital Diagnostics 2021 →</a><br>
+            <strong>🔗 Data:</strong> <a href="https://mosmed.ai/en/datasets/datasets/ultrasounddopplertwinklingartifact/" target="_blank">mosmed.ai →</a><br>
+            <strong>💻 Code:</strong> <a href="https://github.com/Center-of-Diagnostics-and-Telemedicine/TwinklingDatasetDisplay.git" target="_blank">TwinklingDatasetDisplay →</a>
+        </div>
+    </div>
+    
+    <!-- Карточка 3: Aberration Correction Dataset -->
+    <div class="dataset-card">
+        <div class="dataset-title">📐 Aberration Correction (SA + RF)</div>
+        <div class="dataset-desc">Raw RF data for synthetic aperture imaging and Legendre polynomial‑based phase aberration correction. Includes C++ code and ex vivo temporal bone data.</div>
+        <div class="dataset-meta">
+            <span class="badge" style="background:#2c7da0; color:white;">Synthetic aperture</span>
+            <span class="badge" style="background:#2c7da0; color:white;">10.6084/m9.figshare.18495170.v1</span>
+        </div>
+        <div class="dataset-meta">
+            <strong>📄 Paper:</strong> <a href="https://doi.org/10.1002/mp.17078" target="_blank">Leonov et al., Medical Physics 2024 →</a><br>
+            <strong>🔗 Data & code:</strong> <a href="https://doi.org/10.6084/m9.figshare.18495170.v1" target="_blank">Figshare →</a><br>
+            <strong>📁 ResearchGate:</strong> <a href="https://www.researchgate.net/publication/357867058_Aberration_Correction_Raw_Ultrasound_Data_and_Computer_Program" target="_blank">Dataset on RG →</a>
+        </div>
+    </div>
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+    📁 Full source code, build instructions and documentation: 
+    <a href="https://github.com/moscow-ultrasound-lab/rufus" target="_blank"><strong>GitHub repository</strong></a> &nbsp;|&nbsp;
+    📌 Permanent DOI: <a href="https://doi.org/10.5281/zenodo.20162300">10.5281/zenodo.20162300</a>
+</p>
+
 <!-- ==================== PUBLICATIONS (RUFUS CORE) ==================== -->
 <h2>📄 Core publications (RUFUS)</h2>
 <div class="features-grid" style="grid-template-columns: 1fr;">
@@ -302,25 +357,6 @@ BmodeImage saImage = processor.syntheticAperture(reader, saParams);
 saImage.save("output.png");</pre>
 </div>
     
-<!-- ==================== LINKS: SETUP + DATASETS ==================== -->
-<div style="margin: 2rem 0; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-    <!-- Кнопка для скачивания (только если EXE выложен в Releases) -->
-    
-    <a href="https://github.com/moscow-ultrasound-lab/rufus/releases/download/v0.1.0/RUFUS_v0.1.0_Setup.exe" 
-       style="background: #0a2f6c; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
-        ⬇️ Download RUFUS v0.1.0 (Windows)
-    </a>
-        
-    <a href="https://mosmed.ai/en/datasets/datasets/ultrasounddopplertwinklingartifact/" 
-       style="background: #2c5282; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none;">
-        📊 CFM dataset (Doppler twinkling, 10.5 GB)
-    </a>
-    
-    <a href="https://doi.org/10.6084/m9.figshare.18495170.v1" 
-       style="background: #2c5282; color: white; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none;">
-        📊 SA + Aberration dataset (Medical Physics)
-    </a>
-</div>
 
 <p>
     📁 Full source code, build instructions and documentation are available in the 
