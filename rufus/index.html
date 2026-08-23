@@ -205,18 +205,29 @@
 <h2>⚙️ Key features</h2>
 <div class="features-grid">
     <div class="feature-card">
-        <h3>🔌 Multi‑scanner RF input</h3>
-        <p>Supports raw RF data from <strong>Sonomed‑500</strong> (production) and <strong>Verasonics</strong> (development). Extensible binary format interface for other scanners.</p>
-        <span class="badge">Sonomed‑500</span>
-        <span class="badge">Verasonics</span>
-        <span class="badge">40 MHz sampling</span>
-    </div>
+    <h3>🔌 Multi‑scanner RF input</h3>
+    <p>Supports raw channel data (RF or IQ) from <strong>Sonomed‑500</strong>, <strong>Verasonics</strong> (HDF5), <strong>ULA‑OP256</strong>, and <strong>Ultrasonix SonixTouch</strong> (L14‑5/38 via OASBUD). Extensible binary format for new scanners.</p>
+    <span class="badge">Sonomed‑500</span>
+    <span class="badge">Verasonics</span>
+    <span class="badge">ULA‑OP256</span>
+    <span class="badge">Ultrasonix</span>
+    <span class="badge">Plane‑wave</span>
+    <span class="badge">Synthetic aperture</span>
+</div>
     <div class="feature-card">
         <h3>🔬 B‑mode & synthetic aperture</h3>
         <p>Conventional and synthetic aperture beamforming. Aberration correction using Legendre polynomial approximation (up to 3.08× peak intensity recovery).</p>
         <span class="badge">real‑time B‑mode (117 fps)</span>
         <span class="badge">SA focusing</span>
     </div>
+    <div class="feature-card">
+    <h3>🌊 Plane‑wave imaging</h3>
+    <p>Supports plane‑wave compounding (PICMUS / USTB format) and beamforming for high‑frame‑rate imaging. Works with Verasonics L11‑5V and CIRS phantoms.</p>
+    <span class="badge">PICMUS</span>
+    <span class="badge">USTB</span>
+    <span class="badge">plane‑wave compounding</span>
+    <span class="badge">high frame rate</span>
+</div>
     <div class="feature-card">
         <h3>🩸 Color flow imaging (CFM)</h3>
         <p>Complete CFM pipeline: clutter filtering (polynomial, SVD), masking (91.6% diagnostic efficiency), velocity estimation via autocorrelation.</p>
@@ -245,13 +256,13 @@
 
 <!-- ==================== DOWNLOAD & OPEN DATASETS ==================== -->
 <h2>📦 Download & Open Datasets</h2>
-    <p>RUFUS can read raw RF data from the following public repositories — you can test the framework immediately after installation.</p>
+<p>RUFUS can read raw RF data from the following public repositories — you can test the framework immediately after installation.</p>
 <div class="datasets-grid">
     
-    <!-- Карточка 1: RUFUS Setup -->
+    <!-- Карточка 1: RUFUS Setup (ваш релиз) -->
     <div class="dataset-card featured">
         <div class="dataset-title">⚙️ RUFUS v0.2.0 (Windows)</div>
-        <div class="dataset-desc">Pre‑compiled executable for Windows. Includes B‑mode, synthetic aperture, CFM, and compression elastography. After installation, run <code>rufus-main.exe</code> and choose the desired mode from the menu.</div>
+        <div class="dataset-desc">Pre‑compiled executable for Windows. Includes B‑mode, synthetic aperture, plane‑wave, CFM, and compression elastography. Run <code>rufus-main.exe</code> and choose the desired mode.</div>
         <div class="dataset-meta">
             <span class="badge badge-size">Windows 10/11</span>
         </div>
@@ -261,78 +272,119 @@
         </div>
     </div>
     
-    <!-- Карточка 2: CFM / Doppler Twinkling Dataset -->
+    <!-- Карточка 2: Doppler Twinkling (наш) -->
     <div class="dataset-card">
-        <div class="dataset-title">✨ Doppler Twinkling Artifact Database</div>
-        <div class="dataset-desc">Raw RF signals (10.5 GB) for color flow imaging and twinkling artifact studies.</div>
+        <div class="dataset-title">✨ Doppler Twinkling Artifact</div>
+        <div class="dataset-desc">Raw RF signals (10.5 GB) from Sonomed‑500. CFM data with twinkling artifact, blood flow, and phantoms.</div>
         <div class="dataset-meta">
             <span class="badge" style="background:#2c7da0; color:white;">10.5 GB</span>
+            <span class="badge" style="background:#2c7da0; color:white;">Sonomed‑500</span>
             <span class="badge" style="background:#2c7da0; color:white;">CFM</span>
         </div>
         <div class="dataset-meta">
-            <strong>📄 Paper:</strong> <a href="https://doi.org/10.17816/DD76511" target="_blank">Leonov et al., Digital Diagnostics 2021 →</a><br>
-            <strong>🔗 Data:</strong> <a href="https://mosmed.ai/en/datasets/datasets/ultrasounddopplertwinklingartifact/" target="_blank">mosmed.ai →</a><br>
+            <strong>📄 Paper:</strong> <a href="https://doi.org/10.17816/DD76511" target="_blank">Digital Diagnostics 2021</a><br>
+            <strong>🔗 Data:</strong> <a href="https://mosmed.ai/en/datasets/datasets/ultrasounddopplertwinklingartifact/" target="_blank">mosmed.ai →</a>
         </div>
     </div>
-    
-    <!-- Карточка 3: Aberration Correction Dataset -->
+
+    <!-- Карточка 3: Aberration Correction (наш) -->
     <div class="dataset-card">
         <div class="dataset-title">📐 Aberration Correction (SA + RF)</div>
-        <div class="dataset-desc">Raw RF data for synthetic aperture imaging and aberration correction. Includes experiments with ATS 539 multipurpose phantom and ex vivo temporal bone data.</div>
+        <div class="dataset-desc">Raw RF data from Sonomed‑500 for synthetic aperture and aberration correction. Includes ATS 539 phantom and ex vivo temporal bone.</div>
         <div class="dataset-meta">
             <span class="badge" style="background:#2c7da0; color:white;">Synthetic aperture</span>
-            <span class="badge" style="background:#2c7da0; color:white;">10.6084/m9.figshare.18495170.v1</span>
+            <span class="badge" style="background:#2c7da0; color:white;">Sonomed‑500</span>
         </div>
         <div class="dataset-meta">
-            <strong>📄 Paper:</strong> <a href="https://doi.org/10.1002/mp.17078" target="_blank">Leonov et al., Medical Physics 2024 →</a><br>
-            <strong>🔗 Data:</strong> <a href="https://doi.org/10.6084/m9.figshare.18495170.v1" target="_blank">Figshare →</a><br>
-            <strong>📁 ResearchGate:</strong> <a href="https://www.researchgate.net/publication/357867058_Aberration_Correction_Raw_Ultrasound_Data_and_Computer_Program" target="_blank">Dataset on RG →</a>
+            <strong>📄 Paper:</strong> <a href="https://doi.org/10.1002/mp.17078" target="_blank">Medical Physics 2024</a><br>
+            <strong>🔗 Data:</strong> <a href="https://doi.org/10.6084/m9.figshare.18495170.v1" target="_blank">Figshare →</a> | <a href="https://www.researchgate.net/publication/357867058_Aberration_Correction_Raw_Ultrasound_Data_and_Computer_Program" target="_blank">RG →</a>
         </div>
     </div>
 
-    
-    <!-- PICMUS / USTB -->
+    <!-- Карточка 4: Stanford Rat Fatty Liver -->
     <div class="dataset-card">
-        <div class="dataset-title">📊 USTB / PICMUS dataset</div>
-        <div class="dataset-desc">Plane‑wave imaging with a linear array transducer (UltraSound File Format, UFF). Used for beamforming benchmarks.</div>
+        <div class="dataset-title">🐭 Stanford – Rat Fatty Liver</div>
+        <div class="dataset-desc">RF channel data (Verasonics) with ground‑truth sound speed for fatty liver detection.</div>
         <div class="dataset-meta">
-            <span class="badge" style="background:#2c7da0; color:white;">UFF</span>
-            <span class="badge" style="background:#2c7da0; color:white;">Plane‑wave</span>
+            <span class="badge" style="background:#2c7da0; color:white;">Verasonics</span>
+            <span class="badge" style="background:#2c7da0; color:white;">ground‑truth speed</span>
         </div>
         <div class="dataset-meta">
-            <strong>🔗 Repository:</strong> <a href="https://unioslo.github.io/USTB/datasets.html" target="_blank">USTB datasets →</a>
+            <strong>🔗 Repository:</strong> <a href="https://med.stanford.edu/ultrasound/resources/datasets.html" target="_blank">med.stanford.edu →</a>
         </div>
     </div>
 
-    <!-- Verasonics HDF5 -->
+    <!-- Карточка 5: Stanford Aberrating Layer -->
     <div class="dataset-card">
-        <div class="dataset-title">⚡ Verasonics HDF5 dataset</div>
-        <div class="dataset-desc">Raw RF data from Verasonics Vantage system in HDF5 format. Synthetic aperture mode with linear and cardiac transducers.</div>
+        <div class="dataset-title">🧅 Stanford – Aberrating Layer</div>
+        <div class="dataset-desc">RF data (Verasonics) with known sound speed in agar phantom and aberrating layers (chicken/pork).</div>
+        <div class="dataset-meta">
+            <span class="badge" style="background:#2c7da0; color:white;">Verasonics</span>
+            <span class="badge" style="background:#2c7da0; color:white;">aberrating layer</span>
+        </div>
+        <div class="dataset-meta">
+            <strong>🔗 Repository:</strong> <a href="https://med.stanford.edu/ultrasound/resources/datasets.html" target="_blank">med.stanford.edu →</a>
+        </div>
+    </div>
+
+    <!-- Карточка 6: Off‑Grid (Zenodo) -->
+    <div class="dataset-card">
+        <div class="dataset-title">📡 Off‑Grid Ultrasound Imaging</div>
+        <div class="dataset-desc">HDF5 raw RF (Verasonics L11‑5V). Synthetic aperture & plane‑wave data from carotid phantom and in vivo.</div>
         <div class="dataset-meta">
             <span class="badge" style="background:#2c7da0; color:white;">HDF5</span>
             <span class="badge" style="background:#2c7da0; color:white;">Verasonics</span>
+            <span class="badge" style="background:#2c7da0; color:white;">plane‑wave</span>
         </div>
         <div class="dataset-meta">
-            <strong>🔗 Repository:</strong> <a href="https://zenodo.org/records/12647175" target="_blank">Zenodo →</a>
+            <strong>🔗 Repository:</strong> <a href="https://zenodo.org/records/12647175" target="_blank">Zenodo →</a> (10.1109/TUFFC.2025.3586377)
         </div>
     </div>
 
-    <!-- ULA‑OP
+    <!-- Карточка 7: PICMUS (USTB) -->
     <div class="dataset-card">
-        <div class="dataset-title">🔬 ULA‑OP dataset</div>
-        <div class="dataset-desc">In‑house data from ULA‑OP system, synthetic aperture mode with linear array transducer.</div>
+        <div class="dataset-title">🌊 PICMUS (USTB)</div>
+        <div class="dataset-desc">UFF plane‑wave compounding data (Verasonics L11‑5V). CIRS phantom and in vivo carotid artery.</div>
         <div class="dataset-meta">
-            <span class="badge" style="background:#2c7da0; color:white;">ULA‑OP</span>
-            <span class="badge" style="background:#2c7da0; color:white;">Synthetic aperture</span>
+            <span class="badge" style="background:#2c7da0; color:white;">UFF</span>
+            <span class="badge" style="background:#2c7da0; color:white;">Verasonics</span>
+            <span class="badge" style="background:#2c7da0; color:white;">plane‑wave compounding</span>
         </div>
         <div class="dataset-meta">
-            <strong>🔗 Contact:</strong> Available on request (in‑house data)
+            <strong>🔗 Repository:</strong> <a href="https://www.ustb.no/datasets/" target="_blank">USTB datasets →</a>
         </div>
-    </div>  
-     -->
+    </div>
+
+    <!-- Карточка 8: OASBUD (Ultrasonix) -->
+    <div class="dataset-card">
+        <div class="dataset-title">📊 OASBUD (Ultrasonix)</div>
+        <div class="dataset-desc">IQ data (already beamformed) from Ultrasonix SonixTouch Research scanner with L14‑5/38 linear array. Breast imaging.</div>
+        <div class="dataset-meta">
+            <span class="badge" style="background:#2c7da0; color:white;">Ultrasonix</span>
+            <span class="badge" style="background:#2c7da0; color:white;">IQ data</span>
+            <span class="badge" style="background:#2c7da0; color:white;">breast</span>
+        </div>
+        <div class="dataset-meta">
+            <strong>🔗 Repository:</strong> <a href="https://www.ultrasoundbenchmarking.com/datasets/oasbud/" target="_blank">OASBUD →</a>
+        </div>
+    </div>
+
+    <!-- Карточка 9: CUBDL (IEEE DataPort) -->
+    <div class="dataset-card">
+        <div class="dataset-title">🧠 CUBDL (USTB / IEEE)</div>
+        <div class="dataset-desc">RF channel data (HDF5/BIN) for deep‑learning beamforming (plane‑wave). Verasonics, phantom & in vivo.</div>
+        <div class="dataset-meta">
+            <span class="badge" style="background:#2c7da0; color:white;">HDF5</span>
+            <span class="badge" style="background:#2c7da0; color:white;">Verasonics</span>
+            <span class="badge" style="background:#2c7da0; color:white;">deep‑learning benchmark</span>
+        </div>
+        <div class="dataset-meta">
+            <strong>🔗 Repository:</strong> <a href="https://cubdl.jhu.edu/datasets/" target="_blank">cubdl.jhu.edu →</a> | <a href="https://ieee-dataport.org/competitions/challenge-ultrasound-beamforming-deep-learning-cubdl-datasets" target="_blank">IEEE DataPort →</a>
+        </div>
+    </div>
     
 </div>
-    
+
 <p style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
     📁 Full source code, build instructions and documentation: 
     <a href="https://github.com/moscow-ultrasound-lab/rufus" target="_blank"><strong>GitHub repository</strong></a> &nbsp;|&nbsp;
